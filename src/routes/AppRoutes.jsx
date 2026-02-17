@@ -1,21 +1,58 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "../pages/Login";
+
+import Login from "../pages/auth/Login";
 import Dashboard from "../pages/Dashboard";
 import CategoryPage from "../pages/categories/CategoryPage";
 import ItemPage from "../pages/items/ItemPage";
 import AddItem from "../pages/items/AddItem";
 
-
+import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* 🔓 Public */}
         <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/categories" element={<CategoryPage />} />
-        <Route path="/items" element={<ItemPage />} />
-<Route path="/add-item" element={<AddItem />} />
+
+        {/* 🔐 Protected */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/categories"
+          element={
+            <ProtectedRoute>
+              <CategoryPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/items"
+          element={
+            <ProtectedRoute>
+              <ItemPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/add-item"
+          element={
+            <ProtectedRoute>
+              <AddItem />
+            </ProtectedRoute>
+          }
+        />
+
       </Routes>
     </BrowserRouter>
   );

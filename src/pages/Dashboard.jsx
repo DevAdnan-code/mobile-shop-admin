@@ -2,7 +2,7 @@ import MainLayout from "../layout/MainLayout";
 
 const Dashboard = () => {
   return (
-    <MainLayout>
+    <MainLayout>np
       <h1 className="text-2xl font-bold">Dashboard</h1>
       <div className="grid grid-cols-2 gap-4 mt-4">
   <div className="bg-white p-4 rounded shadow">
