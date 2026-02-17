@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
-import MobileBottomNav from "../Components/MobileBottomNav";
+import MobileBottomNav from ".../components/MobileBottomNav";
+
 
 const MainLayout = ({ children }) => {
   const [open, setOpen] = useState(false);
