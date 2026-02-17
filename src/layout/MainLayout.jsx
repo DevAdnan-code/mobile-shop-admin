@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
-import MobileBottomNav from ".../components/MobileBottomNav.jsx";
+import MobileBottomNav from "../components/MobileBottomNav.jsx";
 
 
 
